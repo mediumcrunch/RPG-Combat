@@ -5,7 +5,9 @@ class Header extends React.Component {
 	render() {
 		return (
 			<header>
-				<h1>{document.title} <span role="img" aria-label="swords">⚔️</span></h1>
+				<div className="container">
+					<h1 className="brand"><a href="./">{document.title} <span role="img" aria-label="swords">⚔️</span></a></h1>
+				</div>
 			</header>
 		);
 	}

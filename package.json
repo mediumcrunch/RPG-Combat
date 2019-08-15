@@ -1,15 +1,15 @@
 {
-	"name": "rpg",
+	"name": "rpg-combat",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "index.html",
 	"scripts": {
 		"start": "parcel index.html",
 		"build": "parcel build index.html",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [],
-	"author": "",
+	"author": "Medium Crunch",
 	"license": "ISC",
 	"devDependencies": {
 		"@babel/core": "^7.4.4",

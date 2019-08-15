@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Header from '../components/Header'
-import '../scss/app.scss'
+import Footer from '../components/Footer'
 
 class App extends React.Component {
 	constructor(props) {
@@ -83,18 +83,19 @@ class App extends React.Component {
 							{/* <span role="img" aria-label="shield" onClick={console.log("coming soon")} className="command" title="Raise Defense">🛡️</span> */}
 						</h2>
 						<ul>
-							<li>Health: {hero.health}</li>
+							<li className="health">Health: {hero.health}</li>
 							<li>Damage: {hero.damage}</li>
 						</ul>
 					</div>
 					<div className="enemy">
 						<h2>Enemy 💀</h2>
 						<ul>
-							<li>Health: {enemy.health}</li>
+							<li className="health">Health: {enemy.health}</li>
 							<li>Damage: {enemy.damage}</li>
 						</ul>
 					</div>
 				</section>
+				<Footer />
 			</React.Fragment>
 		);
 	}

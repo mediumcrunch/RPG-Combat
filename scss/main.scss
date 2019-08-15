@@ -1,0 +1,154 @@
+$bg: #25272c;
+$txt: #fff;
+$accent: #4ac99a;
+$accent-secondary: #9e8ffd;
+$damage: #e32636;
+$victory: #eb0;
+
+$padding: 15px;
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background-color: $bg;
+	color: $txt;
+	font: 18px/1.5 Nunito, sans-serif;
+	margin: 0;
+	text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.2;
+}
+
+a {
+	color: $accent;
+	text-decoration: none;
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: $accent-secondary;
+	}
+}
+
+button {
+	cursor: pointer;
+}
+
+.container {
+	padding: $padding;
+	width: 100%;
+}
+
+@media (min-width: 960px) {
+	.container {
+		margin: 0 auto;
+		width: 960px;
+	}
+}
+
+.app {
+	align-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	// justify-content: space-evenly;
+	justify-content: center;
+	padding: $padding;
+}
+
+@media (min-width: 500px) {
+	.app {
+		// justify-content: space-between;
+		justify-content: center;
+	}
+}
+
+.brand {
+	a {
+		color: $txt;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: $accent-secondary;
+		}
+	}
+}
+
+.victory {
+	margin-bottom: ($padding * 2);
+	text-align: center;
+	width: 100%;
+}
+
+.hero,
+.enemy {
+	border-radius: 50% / 5%;
+	font-size: 24px;
+	min-width: 25%;
+	padding: ($padding * 2);
+}
+
+.victory-null.turn-hero .hero,
+.victory-null.turn-enemy .enemy {
+	box-shadow: 0 4px 0 0 $accent inset, 0 20px 20px -20px darken($bg, 5%);
+	background-color: lighten($bg, 10%);
+}
+
+.victory-null.turn-enemy .hero,
+.victory-null.turn-hero .enemy,
+.victory-enemy .hero,
+.victory-hero .enemy {
+	color: rgba($txt, 70%);
+}
+
+.victory-hero .hero,
+.victory-enemy .enemy {
+	box-shadow: 0 4px 0 0 $victory inset, 0 20px 20px -20px darken($bg, 5%);
+	background-color: lighten($bg, 10%);
+}
+
+.victory-hero .enemy .health,
+.victory-enemy .hero .health {
+	color: $damage;
+}
+
+.hero h2,
+.enemy h2 {
+	margin: 0;
+}
+
+.command {
+	cursor: pointer;
+}
+
+.turn-enemy .command,
+.victory-enemy .command {
+	cursor: not-allowed;
+	filter: grayscale(100%);
+}
+
+.hero ul,
+.enemy ul {
+	list-style: none;
+	margin: $padding 0 0;
+	padding: 0;
+}
