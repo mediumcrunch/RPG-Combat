@@ -8,10 +8,12 @@ $victory: #eb0;
 $padding: 15px;
 
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
-*, *:before, *:after {
-  box-sizing: inherit;
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
 }
 
 html,
@@ -52,13 +54,13 @@ button {
 }
 
 .container {
+	margin: 0 auto;
 	padding: $padding;
 	width: 100%;
 }
 
 @media (min-width: 960px) {
 	.container {
-		margin: 0 auto;
 		width: 960px;
 	}
 }
@@ -151,4 +153,29 @@ button {
 	list-style: none;
 	margin: $padding 0 0;
 	padding: 0;
+}
+
+.party {
+	&__list {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		align-content: center;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		strong {
+			font-size: 1.2em;
+		}
+	}
+
+	&__member {
+		display: inline-block;
+	}
 }

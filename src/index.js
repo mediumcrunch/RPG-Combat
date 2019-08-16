@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Header from '../components/Header'
+import Party from '../components/Party'
 import Footer from '../components/Footer'
 
 class App extends React.Component {
@@ -9,18 +10,40 @@ class App extends React.Component {
 		this.state = {
 			currentTurn: "hero",
 			victory: null,
+			// items: {
+			// 	upgrades: {
+			// 		sword: 2
+			// 	}
+			// },
 			hero: {
+				party: [
+					{
+						name: 'Duncan',
+						class: 'Steward',
+						health: Math.ceil(Math.random() * 100),
+						damage: Math.ceil(Math.random() * 10),
+					},
+					{
+						name: 'Bria',
+						class: 'Knight',
+						health: Math.ceil(Math.random() * 100),
+						damage: Math.ceil(Math.random() * 10),
+					},
+					{
+						name: 'Orville Peck',
+						class: 'Bard',
+						health: Math.ceil(Math.random() * 100),
+						damage: Math.ceil(Math.random() * 10),
+					}
+				],
 				health: Math.ceil(Math.random() * 100),
 				damage: Math.ceil(Math.random() * 10),
-				inventory: null
+				inventory: 'sword-iron'
 			},
 			enemy: {
 				health: Math.ceil(Math.random() * 100),
 				damage: Math.ceil(Math.random() * 10),
 				inventory: null
-			},
-			items: {
-				swordUpgrade: 2
 			}
 		}
 	}
@@ -75,7 +98,7 @@ class App extends React.Component {
 		return (
 			<React.Fragment>
 				<Header />
-				<section className={!victory ? currentTurn === "hero" ? "app container turn-hero victory-null" : "app container turn-enemy victory-null" : "app container victory-" + victory}>
+				<main className={!victory ? currentTurn === "hero" ? "app container turn-hero victory-null" : "app container turn-enemy victory-null" : "app container victory-" + victory}>
 					<div className="hero">
 						<h2>
 							Hero
@@ -94,7 +117,8 @@ class App extends React.Component {
 							<li>Damage: {enemy.damage}</li>
 						</ul>
 					</div>
-				</section>
+				</main>
+				<Party party={this.state.hero.party} />
 				<Footer />
 			</React.Fragment>
 		);
